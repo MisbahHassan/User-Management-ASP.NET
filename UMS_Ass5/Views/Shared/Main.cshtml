@@ -1,0 +1,47 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Main</title>
+</head>
+<body>
+    <div>
+
+        @{
+            ViewBag.Title = "Main";
+        }
+        <table>
+            <tr>
+                <td>
+                    <input type="submit" id="NewUser" value="New User" onclick="@("window.location.href='" + @Url.Action("NewUser", "User") + "'");" />
+                    <br />
+            <tr>
+                <td>
+                    <input type="submit" id="ExistingUser" value="Existing User" onclick="@("window.location.href='" + @Url.Action("ExistingUser", "User") + "'");"/>
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="Admin" value="Admin" onclick="@("window.location.href='" + @Url.Action("Admin", "Admin") + "'");" />
+                </td>
+                <br />
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" id="Exit" value="Exit" onclick="@("window.location.href='" + @Url.Action("Exit", "User") + "'");"/>
+                </td>
+                <br />
+            </tr>
+
+        </table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Admin</title>
+</head>
+<body>
+    <div>
+        <h1>Admin</h1>
+        <form action="~/Admin/LoginAdmin" method="post" enctype="multipart/form-data">
+
+            Login:<input type="text" placeholder="Enter Login" name="login"><br />
+            Password: <input type="password" placeholder="Enter Password" name="password"><br />
+            <input type="submit" value="Login" name="login" /><br />
+        </form>
+            <form action="~/Admin/CancelAdmin">
+                <input type="submit" value="Cancel" name="cancel" /> <br />    
+        </form>
+    </div>
+</body>
+</html>

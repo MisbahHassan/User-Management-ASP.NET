@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ExistingUser</title>
+</head>
+<body>
+    <div>
+        <h1>Existing User</h1>
+        <form action="~/User/Login" method="post" enctype="multipart/form-data">
+            Login:
+            <input type="text" placeholder="Enter Login" name="login"><br />
+            Password:
+            <input type="password" placeholder="Enter Password" name="password"><br />
+            <input type="submit" value="Login" name="login" /><br />
+        </form>
+
+        <form action="~/User/Main">
+            <input type="submit" value="Cancel" name="cancel" /><br />
+        </form>
+
+        <form action="~/User/ForgetPassword" method="post" enctype="multipart/form-data">
+
+            <h6>  Forget Password?</h6>
+            Email:<input type="text" placeholder="Enter Email" name="email"><br />
+            <input type="submit" value="Reset password" name="reset"><br />
+        </form>
+    </div>
+</body>
+</html>

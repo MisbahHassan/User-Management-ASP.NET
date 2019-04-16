@@ -1,0 +1,129 @@
+﻿@model UMS_Ass5.Models.UserDTO
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>New User</title>
+</head>
+<body>
+    <div>
+        <h1>New User</h1>
+        
+       
+        <form action="~/User/CreateUser" method="post" enctype="multipart/form-data">
+            <table cellpadding="5" cellspacing="5">
+                <tr>
+                    <td> Name:<input type="text" id="name" name="name" required value="@Model.name" /></td>
+                    <td rowspan="4"><input type="file" id="imageName" name="imageName" value="~/uploadedFiles/@Model.imageName"></td>
+
+                </tr>
+                <tr>
+                    <td>
+                        Login:
+                        <input type="text" name="login" value="@Model.login" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Password:
+                        <input type="password" name="password" value="@Model.password" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email:
+                        <input type="email" name="email" value="@Model.email" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Gender:
+                        <select name="gender" id="gender" required>
+                            @{
+                                String male = "";
+                                String female = "";
+                                if (Model.gender == "M")
+                                {
+                                    male = "selected";
+                                }
+                                else
+                                {
+                                    female = "selected";
+                                }
+                            }
+                            <option value="M" @male>Male</option>
+                            <option value="F" @female>Female</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+
+
+                    <td>
+                        Address:
+                        <textarea name="address" style="height:50px">@Model.address</textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Age:
+                        <input type="number" name="age" value="@Model.age" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        NIC:
+                        <input type="text" name="nic" value="@Model.nic" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        DOB:
+                        <input type="date" name="dob">
+                    </td>
+                </tr>
+                <tr>
+                    @{
+                        string cricket = "";
+                        string hockey = "";
+                        string chess = "";
+                        if (Model.cricket)
+                        {
+                            cricket = "checked";
+                        }
+                        if (Model.hockey)
+                        {
+                            hockey = "checked";
+                        }
+                        if (Model.chess)
+                        {
+                            chess = "checked";
+                        }
+                    }
+                    <td>
+                        <input type="checkbox" name="hockey" @hockey> Hockey
+                        <input type="checkbox" name="chess" @chess>Chess
+                        <input type="checkbox" name="cricket" @cricket>Cricket
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" value="Create" name="createUser" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+       
+     <input type="submit" value="Cancel" name="cancel" onclick="@("window.location.href='" + @Url.Action("CancelUser", "User") + "'");" />
+               
+
+
+    </div>
+</body>
+</html>

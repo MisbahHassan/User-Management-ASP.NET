@@ -1,0 +1,28 @@
+﻿@model UMS_Ass5.Models.UserDTO
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Home</title>
+</head>
+<body>
+    <div> 
+       @{ 
+           Session["id"] = Model.UserID;
+       }
+        <h2>Welcome @Model.name</h2>
+        <div style="text-align:right; margin-right:100px">
+            <img src="~/uploadedFiles/@Model.imageName" style="width:200px;height:250px;"><br />
+            <button style="margin-top:10px"  type="submit" onclick="@("window.location.href='" + @Url.Action("Edit", "Admin",new { id=Model.UserID })+ "'");">Edit Profile</button>
+            <button style="margin-top:10px"  type="submit"  onclick="@("window.location.href='" + @Url.Action("Main", "User") + "'");"/>Logout</button>
+        </div>
+
+    </div>
+</body>
+</html>

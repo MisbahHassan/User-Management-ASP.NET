@@ -1,0 +1,22 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ResetCode</title>
+</head>
+<body>
+    <div> 
+        <form method="post" action='@Url.Content("~/User/ResetCode")'>
+            <h1>Enter Reset Code</h1>
+            <input type="text" name="code">
+            <input type="submit" name="reset" value="Confirm">
+        </form>
+    </div>
+</body>
+</html>
